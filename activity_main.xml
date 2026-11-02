@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="vertical"
+    android:background="#F5F7FB">
+
+    <LinearLayout
+        android:id="@+id/layoutMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- TextView -->
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_students"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#0D47A1"
+            android:gravity="center"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- EditText -->
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="44dp"
+            android:hint="@string/enter_your_name"
+            android:textColor="#212121"
+            android:textColorHint="#757575"
+            android:inputType="textPersonName"
+            android:autofillHints="name"
+            android:maxLength="30"
+            android:maxLines="1"
+            android:drawableStart="@android:drawable/ic_menu_edit"
+            android:drawablePadding="6dp"/>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/submit"
+            android:textSize="13sp"
+            android:onClick="onSubmitClick"
+            android:backgroundTint="#2196F3"
+            android:layout_margin="6dp"/>
+
+        <!-- ImageButton -->
+        <ImageButton
+            android:id="@+id/btnCamera"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="center"
+            android:src="@android:drawable/ic_menu_camera"
+            android:contentDescription="@string/camera_button"
+            android:backgroundTint="#E3F2FD"
+            android:scaleType="centerInside"/>
+
+        <!-- ImageView: image.png -->
+        <ImageView
+            android:id="@+id/imageProfile"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/istockphoto"
+            android:contentDescription="@string/profile_image"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"/>
+
+        <!-- CheckBox -->
+        <CheckBox
+            android:id="@+id/checkAgree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:text="@string/i_agree_to_terms"
+            android:textSize="13sp"
+            android:textColor="#212121"
+            android:buttonTint="#2196F3"
+            android:layout_marginTop="8dp"/>
+
+        <!-- RadioGroup -->
+        <RadioGroup
+            android:id="@+id/genderGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
+                android:text="@string/male"
+                android:textSize="13sp"
+                android:textColor="#212121"
+                android:buttonTint="#FF5722"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/radioFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
+                android:layout_marginStart="16dp"
+                android:text="@string/female"
+                android:textSize="13sp"
+                android:textColor="#212121"
+                android:buttonTint="#FF5722"/>
+        </RadioGroup>
+
+        <!-- ToggleButton -->
+        <ToggleButton
+            android:id="@+id/toggleWifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:textOn="@string/wifi_on"
+            android:textOff="@string/wifi_off"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:checked="false"
+            android:backgroundTint="#4CAF50"/>
+
+        <!-- Switch -->
+        <Switch
+            android:id="@+id/switchBluetooth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:layout_marginTop="6dp"
+            android:text="@string/bluetooth"
+            android:textSize="14sp"
+            android:textColor="#212121"
+            android:checked="true"
+            android:thumbTint="#FFFFFF"
+            android:trackTint="#4CAF50"/>
+
+        <!-- Indeterminate ProgressBar -->
+        <ProgressBar
+            android:id="@+id/progressLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:indeterminate="true"/>
+
+        <!-- Horizontal ProgressBar -->
+        <ProgressBar
+            android:id="@+id/progressDownload"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:max="100"
+            android:progress="40"
+            android:progressTint="#4CAF50"/>
+
+        <!-- RecyclerView Heading -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/items"
+            android:textColor="#0D47A1"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+
+        <!-- RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:background="#FFFFFF"
+            android:scrollbars="vertical"
+            android:nestedScrollingEnabled="false"/>
+
+        <!-- Spinner Heading -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/select_country"
+            android:textColor="#0D47A1"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+
+        <!-- Spinner -->
+        <Spinner
+            android:id="@+id/spinnerCountry"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="4dp"
+            android:entries="@array/country_list"
+            android:spinnerMode="dropdown"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"/>
+
+        <!-- ListView Heading -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/names"
+            android:textColor="#0D47A1"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+
+        <!-- ListView -->
+        <ListView
+            android:id="@+id/listNames"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            android:background="#FFFFFF"
+            android:divider="#DDDDDD"
+            android:dividerHeight="1dp"
+            android:padding="5dp"
+            android:nestedScrollingEnabled="false"/>
+
+        <!-- AutoCompleteTextView -->
+        <AutoCompleteTextView
+            android:id="@+id/autoCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="45dp"
+            android:layout_marginTop="14dp"
+            android:hint="@string/enter_country"
+            android:textColor="#212121"
+            android:textColorHint="#757575"
+            android:completionThreshold="1"
+            android:maxLines="1"
+            android:inputType="text"
+            android:padding="8dp"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+</ScrollView>
